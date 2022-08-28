@@ -1,0 +1,65 @@
+<mat-card>
+    <mat-card-content>
+  
+              <div style="margin-left: 97%;" (click)="sideer()" class="example-button-container">
+                <button mat-mini-fab style="background-color: #16bca8;" >
+                  <mat-icon>__</mat-icon>
+                </button>
+              </div>
+
+        <div class="header">
+            <h2>HomePage</h2>
+        </div>
+      
+        <div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+            <button class="sidebar-close" (click)="sidebarShow = !sidebarShow">x</button>
+            <div class="sidebar-content">
+                <h2 class="set-align"></h2>
+                <div class="set-sidebar-text">Home</div>
+                <div class="set-sidebar-text">Dashbord</div>
+            </div>
+          </div>
+
+          <!-- <div style="margin-left: 95%;">
+          <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname">
+        </div> -->
+        <form  name="HomePageForm" [formGroup]="HomePageForm">
+            <!-- <div class="row"> -->
+
+        <label style="margin-right: 94%; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Enter ID:</label>
+               <!-- <div class="col"> -->
+        <input type="text" formControlName="ID" [(ngModel)]="IDD" class="form-cont" placeholder="Please enter your ID">
+        <br>
+
+    <!-- </div> -->
+    <!-- <div class="col">
+        <button mat-flat-button color="primary" (click)="AddItem()">ADD</button>
+    </div> -->
+    
+<!-- </div> -->
+        <label style="margin-right: 92%; font-family: 'Times New Roman', Times, serif; font-weight: bold;">Enter Name:</label>
+        <input type="text" formControlName="Name" [(ngModel)]="Namee" class="form-cont" placeholder="Please enter your Name">
+        <!-- <mat-error *ngIf="Name.errors.required">password require</mat-error> -->
+        </form>
+       <button mat-flat-button color="primary" (click)="AddItem()">ADD</button>
+
+          <div class="container" style="margin-top:50px ;">
+          <table class="table table-bordered table-striped">
+            <tr>
+                <th style="background-color: rgb(175, 174, 174);" *ngFor="let column of header">
+                    {{column}}
+                </th>
+            </tr>
+            <tr *ngFor="let row of rows">
+                <td *ngFor="let column of header">
+                    {{row[column]}}
+                </td>
+            </tr>
+          </table>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+
+  
